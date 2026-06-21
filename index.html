@@ -1,1 +1,40 @@
+// Mobile nav toggle
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
 
+  // Color-preview widget on homepage hero
+  var room = document.querySelector('.room');
+  var chips = document.querySelectorAll('.chip');
+  if (room && chips.length) {
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        room.style.setProperty('--room-color', chip.dataset.color);
+        chips.forEach(function (c) { c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+      });
+    });
+  }
+
+  // Booking form — client-side handling
+  var form = document.querySelector('.booking-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var success = document.querySelector('.form-success');
+      form.style.display = 'none';
+      if (success) success.classList.add('is-visible');
+
+      // To make this form deliver real submissions to your inbox,
+      // create a free endpoint at https://formspree.io and set the
+      // form's action="https://formspree.io/f/yourFormId" plus
+      // method="POST", then remove the preventDefault() above.
+    });
+  }
+});
