@@ -1,40 +1,60 @@
-// Mobile nav toggle
-document.addEventListener('DOMContentLoaded', function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.querySelector('.main-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
+<!-- CHUNK 4/4 -->
+<section class="band">
+<div class="wrap">
+<div class="head"><h2>A simple process that builds trust fast.</h2><p>Customers understand exactly what happens next, which makes them more likely to submit the form.</p></div>
+<div class="process">
+<div class="step">Request estimate<span>Send the basics through the booking form or call directly.</span></div>
+<div class="step">Walkthrough<span>We review the space, surfaces, colors, timeline, and prep.</span></div>
+<div class="step">Clear quote<span>You get pricing, scope, materials, and schedule in writing.</span></div>
+<div class="step">Clean finish<span>The crew protects your property and leaves the space ready.</span></div>
+</div>
+</div>
+</section>
 
-  // Color-preview widget on homepage hero
-  var room = document.querySelector('.room');
-  var chips = document.querySelectorAll('.chip');
-  if (room && chips.length) {
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        room.style.setProperty('--room-color', chip.dataset.color);
-        chips.forEach(function (c) { c.classList.remove('is-active'); });
-        chip.classList.add('is-active');
-      });
-    });
-  }
+<section id="work">
+<div class="wrap">
+<div class="head"><h2>Recent project style.</h2><p>For a live client, these blocks can use real before-and-after photos, locations, and proof captions.</p></div>
+<div class="gallery">
+<article class="project"><div class="label">Interior repaint<span>Clean walls, bright trim, modern finish</span></div></article>
+<div class="stack">
+<article class="project small"><div class="label">Exterior refresh<span>Curb appeal upgrade</span></div></article>
+<article class="project small"><div class="label">Cabinet finish<span>Premium kitchen look</span></div></article>
+</div>
+</div>
+</div>
+</section>
 
-  // Booking form — client-side handling
-  var form = document.querySelector('.booking-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var success = document.querySelector('.form-success');
-      form.style.display = 'none';
-      if (success) success.classList.add('is-visible');
+<section id="reviews" class="band">
+<div class="wrap reviews">
+<div class="quote"><p>“The crew was organized, clean, and the finish made the whole house feel new again.”</p><span>Example review block for social proof</span></div>
+<div class="points">
+<div class="point">Detailed prep before any paint goes on the wall</div>
+<div class="point">Daily cleanup so the property stays usable</div>
+<div class="point">Written scope, schedule, and workmanship warranty</div>
+</div>
+</div>
+</section>
 
-      // To make this form deliver real submissions to your inbox,
-      // create a free endpoint at https://formspree.io and set the
-      // form's action="https://formspree.io/f/yourFormId" plus
-      // method="POST", then remove the preventDefault() above.
-    });
-  }
+<section class="cta">
+<div class="wrap">
+<div><h2>Ready for a cleaner, sharper finish?</h2><p>Book a free estimate and get a clear plan for your painting project.</p></div>
+<a class="btn" href="#booking">Book Estimate</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap foot">
+<span>Northline Painting Co. | Professional painting demo site</span>
+<span>Interior | Exterior | Cabinets | Commercial</span>
+</div>
+</footer>
+
+<script>
+document.querySelector(".card").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Thanks. This static demo form can be connected to email, SMS, CRM, or a booking calendar.");
 });
+</script>
+</body>
+</html>
